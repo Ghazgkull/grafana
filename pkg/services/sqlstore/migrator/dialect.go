@@ -49,6 +49,8 @@ type Dialect interface {
 
 	IsUniqueConstraintViolation(err error) bool
 	IsDeadlock(err error) bool
+
+	ToTimestamp(d1 string) string
 }
 
 func NewDialect(engine *xorm.Engine) Dialect {
